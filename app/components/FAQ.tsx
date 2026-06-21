@@ -5,7 +5,7 @@ const faqs = [
   },
   {
     q: "Est-ce que je pourrai modifier mon site moi-même ?",
-    a: "Oui ! Je vous forme à gérer votre contenu (textes, images, articles de blog) sans avoir besoin de toucher au code. Une documentation est aussi fournie à la livraison.",
+    a: "Oui ! Je vous forme à gérer votre contenu (textes, images, articles de blog) sans avoir besoin de toucher au code. Une documentation est également fournie à la livraison.",
   },
   {
     q: "Qu'est-ce qui est inclus dans le support post-livraison ?",
@@ -21,22 +21,24 @@ const faqs = [
   },
   {
     q: "Est-ce que vous proposez l'hébergement ?",
-    a: "Je ne vends pas d'hébergement directement, mais je vous guide vers les meilleures options selon votre budget (Vercel, OVH, o2switch...) et je m'occupe de la mise en ligne.",
+    a: "Je ne vends pas d'hébergement directement, mais je vous guide vers les meilleures options selon votre budget et je m'occupe entièrement de la mise en ligne.",
   },
 ];
 
 export default function FAQ() {
   return (
-    <section id="faq" className="bg-white py-24 px-6">
+    <section id="faq" className="bg-cream-dark py-24 px-6">
       <div className="max-w-3xl mx-auto">
         <div className="text-center mb-16">
-          <p className="text-indigo-600 font-semibold text-sm uppercase tracking-widest mb-3">
-            FAQ
-          </p>
-          <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <div className="h-px w-10 bg-terra-400" />
+            <span className="text-terra-500 text-xs font-semibold tracking-[0.15em] uppercase">FAQ</span>
+            <div className="h-px w-10 bg-terra-400" />
+          </div>
+          <h2 className="font-serif text-4xl sm:text-5xl text-warm-950 mb-4">
             Les questions fréquentes
           </h2>
-          <p className="text-slate-500 text-lg">
+          <p className="text-warm-500 text-lg">
             Pas encore convaincu ? Voici les réponses aux questions les plus posées.
           </p>
         </div>
@@ -45,28 +47,26 @@ export default function FAQ() {
           {faqs.map((f) => (
             <details
               key={f.q}
-              className="group border border-slate-200 rounded-xl overflow-hidden"
+              className="group bg-warm-50 border border-warm-200/60 rounded-xl overflow-hidden"
             >
-              <summary className="flex items-center justify-between gap-4 px-6 py-5 cursor-pointer hover:bg-slate-50 transition-colors">
-                <span className="font-semibold text-slate-800 text-sm leading-snug">
-                  {f.q}
-                </span>
-                <span className="faq-icon w-7 h-7 rounded-full bg-slate-100 flex items-center justify-center shrink-0 text-slate-500">
-                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+              <summary className="flex items-center justify-between gap-4 px-6 py-5 hover:bg-cream transition-colors">
+                <span className="font-semibold text-warm-900 text-sm leading-snug">{f.q}</span>
+                <span className="faq-icon w-7 h-7 rounded-full bg-terra-100 text-terra-500 flex items-center justify-center shrink-0">
+                  <svg width="13" height="13" viewBox="0 0 14 14" fill="none">
                     <path d="M7 2v10M2 7h10" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
                   </svg>
                 </span>
               </summary>
-              <div className="px-6 pb-5 text-slate-600 text-sm leading-relaxed border-t border-slate-100 pt-4">
+              <div className="px-6 pb-5 text-warm-600 text-sm leading-relaxed border-t border-warm-200/60 pt-4">
                 {f.a}
               </div>
             </details>
           ))}
         </div>
 
-        <div className="mt-10 text-center text-slate-500 text-sm">
+        <div className="mt-10 text-center text-warm-500 text-sm">
           Vous avez une autre question ?{" "}
-          <a href="#contact" className="text-indigo-600 hover:underline font-medium">
+          <a href="#contact" className="text-terra-500 hover:underline font-medium">
             Écrivez-moi directement →
           </a>
         </div>

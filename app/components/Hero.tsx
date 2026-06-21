@@ -1,51 +1,47 @@
 export default function Hero() {
   return (
-    <section className="relative min-h-screen bg-slate-950 flex items-center overflow-hidden">
-      {/* Background gradient blobs */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-40 -left-40 w-[600px] h-[600px] bg-indigo-600/20 rounded-full blur-[100px]" />
-        <div className="absolute -bottom-20 -right-20 w-[500px] h-[500px] bg-violet-600/20 rounded-full blur-[100px]" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-indigo-900/10 rounded-full blur-[80px]" />
+    <section className="relative bg-cream min-h-screen flex items-center overflow-hidden">
+      {/* Subtle warm radial background */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute top-0 right-0 w-[700px] h-[700px] bg-terra-100/50 rounded-full blur-[120px] -translate-y-1/3 translate-x-1/3" />
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-cream-dark/80 rounded-full blur-[100px]" />
       </div>
 
-      {/* Grid overlay */}
-      <div
-        className="absolute inset-0 opacity-[0.03]"
-        style={{
-          backgroundImage:
-            "linear-gradient(rgba(255,255,255,.6) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.6) 1px, transparent 1px)",
-          backgroundSize: "60px 60px",
-        }}
-      />
-
-      <div className="relative max-w-6xl mx-auto px-6 py-32 md:py-0 grid md:grid-cols-2 gap-12 items-center">
-        {/* Left: text */}
+      <div className="relative max-w-6xl mx-auto px-6 py-36 md:py-0 grid md:grid-cols-2 gap-16 items-center w-full">
+        {/* LEFT: Content */}
         <div className="space-y-8">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 text-sm font-medium px-4 py-1.5 rounded-full animate-fade-up">
-            <span className="w-2 h-2 bg-indigo-400 rounded-full animate-pulse" />
-            Livraison en 7 jours garantie
+          {/* Category label */}
+          <div className="animate-fade-up">
+            <div className="flex items-center gap-3">
+              <div className="h-px w-10 bg-terra-500" />
+              <span className="text-terra-500 text-xs font-semibold tracking-[0.15em] uppercase">
+                Agence Web · Coachs &amp; Créateurs
+              </span>
+            </div>
           </div>
 
+          {/* Headline — serif for premium feel */}
           <div className="animate-fade-up animate-delay-100">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.1] tracking-tight">
-              Votre site vitrine,{" "}
-              <span className="gradient-text">conçu pour convaincre.</span>
+            <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl text-warm-950 leading-[1.05] tracking-tight">
+              Des sites qui{" "}
+              <em className="not-italic text-terra-500">parlent</em>{" "}
+              à vos clients.
             </h1>
           </div>
 
-          <p className="text-slate-400 text-lg leading-relaxed max-w-lg animate-fade-up animate-delay-200">
-            Je crée des sites web professionnels sur mesure pour les{" "}
-            <strong className="text-slate-200">coachs</strong>,{" "}
-            <strong className="text-slate-200">consultants</strong> et{" "}
-            <strong className="text-slate-200">créateurs de contenu</strong>{" "}
-            qui veulent attirer leurs clients idéaux — sans se battre avec des outils complexes.
+          <p className="text-warm-600 text-lg leading-relaxed max-w-md animate-fade-up animate-delay-200">
+            Je conçois des sites vitrines sur mesure pour les{" "}
+            <strong className="text-warm-900 font-semibold">coachs</strong>,{" "}
+            <strong className="text-warm-900 font-semibold">consultants</strong> et{" "}
+            <strong className="text-warm-900 font-semibold">créateurs de contenu</strong>{" "}
+            qui veulent attirer leurs clients idéaux — livrés en 7 jours.
           </p>
 
+          {/* CTAs */}
           <div className="flex flex-col sm:flex-row gap-4 animate-fade-up animate-delay-300">
             <a
               href="#contact"
-              className="inline-flex items-center justify-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-7 py-3.5 rounded-full transition-all hover:scale-105 shadow-lg shadow-indigo-500/25"
+              className="inline-flex items-center justify-center gap-2 bg-terra-500 hover:bg-terra-600 text-white font-semibold px-8 py-4 rounded-full transition-all hover:scale-105 shadow-lg shadow-terra-500/25"
             >
               Démarrer mon projet
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -54,7 +50,7 @@ export default function Hero() {
             </a>
             <a
               href="#portfolio"
-              className="inline-flex items-center justify-center gap-2 border border-slate-700 hover:border-slate-500 text-slate-300 hover:text-white font-semibold px-7 py-3.5 rounded-full transition-all"
+              className="inline-flex items-center justify-center gap-2 border border-warm-200 hover:border-terra-400 text-warm-700 hover:text-terra-600 font-semibold px-8 py-4 rounded-full transition-all"
             >
               Voir mes réalisations
             </a>
@@ -67,7 +63,7 @@ export default function Hero() {
               { icon: "🚀", text: "50+ sites livrés" },
               { icon: "🔒", text: "Satisfait ou remboursé" },
             ].map((b) => (
-              <div key={b.text} className="flex items-center gap-1.5 text-slate-500 text-sm">
+              <div key={b.text} className="flex items-center gap-1.5 text-warm-400 text-sm">
                 <span>{b.icon}</span>
                 <span>{b.text}</span>
               </div>
@@ -75,80 +71,85 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Right: Browser mockup */}
-        <div className="hidden md:block animate-float">
-          <div className="relative">
-            {/* Glow behind */}
-            <div className="absolute inset-0 bg-indigo-500/20 blur-3xl rounded-3xl" />
+        {/* RIGHT: Browser mockup */}
+        <div className="hidden md:flex justify-end animate-float">
+          <div className="relative w-full max-w-md">
+            {/* Soft shadow/glow behind */}
+            <div className="absolute inset-0 bg-terra-500/10 blur-3xl rounded-3xl scale-90 translate-y-4" />
 
-            {/* Browser window */}
-            <div className="relative bg-slate-800 rounded-2xl overflow-hidden border border-slate-700/60 shadow-2xl">
+            {/* Browser shell */}
+            <div className="relative bg-warm-50 rounded-2xl overflow-hidden border border-warm-200 shadow-2xl shadow-warm-950/10">
               {/* Browser chrome */}
-              <div className="flex items-center gap-1.5 px-4 py-3 bg-slate-900 border-b border-slate-700/60">
-                <span className="w-3 h-3 rounded-full bg-red-500/80" />
-                <span className="w-3 h-3 rounded-full bg-amber-500/80" />
-                <span className="w-3 h-3 rounded-full bg-green-500/80" />
-                <div className="ml-3 flex-1 bg-slate-700/60 rounded-md px-3 py-1 text-xs text-slate-400">
-                  www.mon-super-site.fr
+              <div className="flex items-center gap-1.5 px-4 py-3 bg-warm-100 border-b border-warm-200">
+                <span className="w-3 h-3 rounded-full bg-[#ff5f57]" />
+                <span className="w-3 h-3 rounded-full bg-[#febc2e]" />
+                <span className="w-3 h-3 rounded-full bg-[#28c840]" />
+                <div className="ml-3 flex-1 bg-warm-200/60 rounded-md px-3 py-1 text-xs text-warm-400 truncate">
+                  www.sophie-coaching.fr
                 </div>
               </div>
 
               {/* Mock site content */}
-              <div className="bg-white p-0">
+              <div>
                 {/* Mock hero */}
-                <div className="bg-gradient-to-br from-indigo-600 to-violet-700 p-8 text-white">
-                  <div className="w-16 h-2 bg-white/40 rounded mb-3" />
-                  <div className="w-40 h-5 bg-white/90 rounded mb-2" />
-                  <div className="w-32 h-3 bg-white/50 rounded mb-6" />
-                  <div className="w-24 h-8 bg-white rounded-full" />
+                <div className="bg-gradient-to-br from-terra-500 to-terra-700 p-8 text-white">
+                  <div className="text-xs text-terra-100/70 mb-2 font-medium">Sophie Martin · Coach de vie</div>
+                  <div className="text-xl font-bold mb-1 leading-tight">Révèle ta meilleure version</div>
+                  <div className="text-sm text-white/60 mb-5">Coaching individuel & programme en ligne</div>
+                  <div className="inline-block bg-white text-terra-600 text-xs font-semibold px-4 py-2 rounded-full">
+                    Réserver un appel gratuit →
+                  </div>
                 </div>
-                {/* Mock content cards */}
-                <div className="p-6 grid grid-cols-3 gap-3">
-                  {[1, 2, 3].map((i) => (
-                    <div key={i} className="bg-slate-50 rounded-xl p-3 border border-slate-100">
-                      <div className="w-6 h-6 bg-indigo-100 rounded-lg mb-2" />
-                      <div className="w-full h-2 bg-slate-200 rounded mb-1.5" />
-                      <div className="w-3/4 h-2 bg-slate-100 rounded" />
+
+                {/* Mock 3 cards */}
+                <div className="p-5 grid grid-cols-3 gap-3 bg-cream">
+                  {["Clarté", "Confiance", "Résultats"].map((label) => (
+                    <div key={label} className="bg-white rounded-xl p-3 border border-warm-100 text-center shadow-sm">
+                      <div className="w-6 h-6 bg-terra-100 rounded-lg mx-auto mb-1.5" />
+                      <div className="text-xs font-semibold text-warm-800">{label}</div>
                     </div>
                   ))}
                 </div>
+
                 {/* Mock testimonial */}
-                <div className="mx-6 mb-6 bg-indigo-50 rounded-xl p-4 border border-indigo-100">
-                  <div className="flex gap-1 mb-2">
+                <div className="mx-5 mb-5 bg-terra-50 rounded-xl p-4 border border-terra-100">
+                  <div className="flex gap-0.5 mb-1.5">
                     {[1,2,3,4,5].map(s => (
-                      <svg key={s} width="10" height="10" viewBox="0 0 10 10" fill="#fbbf24">
+                      <svg key={s} width="10" height="10" viewBox="0 0 10 10" fill="#c4674a">
                         <path d="M5 1l1.2 2.4L9 4.1 6.9 6.1l.5 2.9L5 7.5 2.6 9l.5-2.9L1 4.1l2.8-.7L5 1z" />
                       </svg>
                     ))}
                   </div>
-                  <div className="w-full h-2 bg-indigo-200/60 rounded mb-1.5" />
-                  <div className="w-2/3 h-2 bg-indigo-100 rounded" />
+                  <div className="text-xs text-warm-700 leading-relaxed">
+                    &ldquo;Sophie a changé ma vie en 3 mois de coaching.&rdquo;
+                  </div>
+                  <div className="text-xs text-warm-400 mt-1">— Marie L., Paris</div>
                 </div>
               </div>
             </div>
 
-            {/* Floating notification */}
-            <div className="absolute -bottom-4 -left-6 bg-white rounded-2xl shadow-xl px-4 py-3 flex items-center gap-3 border border-slate-100">
-              <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center text-green-600 text-sm">✓</div>
+            {/* Floating notification: site en ligne */}
+            <div className="absolute -bottom-5 -left-8 bg-white rounded-2xl shadow-xl px-4 py-3 flex items-center gap-3 border border-warm-100">
+              <div className="w-8 h-8 bg-green-50 rounded-full flex items-center justify-center text-green-600 text-sm">✓</div>
               <div>
-                <div className="text-xs font-semibold text-slate-800">Site mis en ligne !</div>
-                <div className="text-xs text-slate-500">Il y a 2 minutes</div>
+                <div className="text-xs font-semibold text-warm-900">Site mis en ligne !</div>
+                <div className="text-xs text-warm-400">Livré en 6 jours</div>
               </div>
             </div>
 
-            {/* Floating stats card */}
-            <div className="absolute -top-4 -right-6 bg-white rounded-2xl shadow-xl px-4 py-3 border border-slate-100">
-              <div className="text-xs text-slate-500 mb-0.5">Nouveaux clients ce mois</div>
-              <div className="text-xl font-bold text-slate-900">+12 <span className="text-green-500 text-sm font-medium">↑ 48%</span></div>
+            {/* Floating stats */}
+            <div className="absolute -top-5 -right-6 bg-white rounded-2xl shadow-xl px-4 py-3 border border-warm-100">
+              <div className="text-xs text-warm-400 mb-0.5">Nouveaux clients / mois</div>
+              <div className="text-xl font-bold text-warm-950">+9 <span className="text-green-500 text-sm font-medium">↑ 52%</span></div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Bottom wave */}
-      <div className="absolute bottom-0 left-0 right-0">
-        <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M0 60H1440V20C1200 60 960 0 720 20C480 40 240 0 0 20V60Z" fill="white" />
+      {/* Bottom wave transition */}
+      <div className="absolute bottom-0 left-0 right-0 pointer-events-none">
+        <svg viewBox="0 0 1440 50" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" className="w-full">
+          <path d="M0 50H1440V18C1200 50 960 0 720 18C480 36 240 0 0 18V50Z" fill="#f0e8db" />
         </svg>
       </div>
     </section>

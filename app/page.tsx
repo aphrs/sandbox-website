@@ -1,5 +1,6 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
+import Marquee from "./components/Marquee";
 import Stats from "./components/Stats";
 import ForWho from "./components/ForWho";
 import Services from "./components/Services";
@@ -17,6 +18,7 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
+        <Marquee />
         <Stats />
         <ForWho />
         <Services />

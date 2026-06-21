@@ -23,36 +23,21 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-white/90 backdrop-blur-md shadow-sm border-b border-slate-100"
+          ? "bg-cream/90 backdrop-blur-md shadow-sm border-b border-warm-200/60"
           : "bg-transparent"
       }`}
     >
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
         <a href="#" className="flex items-center gap-2">
-          <span className="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-violet-600 flex items-center justify-center">
+          <span className="w-8 h-8 rounded-lg bg-terra-500 flex items-center justify-center">
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-              <path
-                d="M3 12L8 4L13 12"
-                stroke="white"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M5 9H11"
-                stroke="white"
-                strokeWidth="2"
-                strokeLinecap="round"
-              />
+              <path d="M3 12L8 4L13 12" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              <path d="M5 9H11" stroke="white" strokeWidth="2" strokeLinecap="round" />
             </svg>
           </span>
-          <span
-            className={`font-semibold text-lg tracking-tight transition-colors ${
-              scrolled ? "text-slate-900" : "text-white"
-            }`}
-          >
-            Élance<span className="text-indigo-400">.</span>
+          <span className={`font-semibold text-lg tracking-tight transition-colors ${scrolled ? "text-warm-950" : "text-warm-950"}`}>
+            Élance<span className="text-terra-500">.</span>
           </span>
         </a>
 
@@ -62,9 +47,7 @@ export default function Navbar() {
             <a
               key={l.href}
               href={l.href}
-              className={`text-sm font-medium transition-colors hover:text-indigo-500 ${
-                scrolled ? "text-slate-600" : "text-white/80"
-              }`}
+              className="text-sm font-medium text-warm-600 hover:text-terra-500 transition-colors"
             >
               {l.label}
             </a>
@@ -75,26 +58,18 @@ export default function Navbar() {
         <div className="hidden md:block">
           <a
             href="#contact"
-            className="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-colors"
+            className="inline-flex items-center gap-2 bg-terra-500 hover:bg-terra-600 text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-colors"
           >
             Démarrer mon projet
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-              <path
-                d="M2.5 7H11.5M11.5 7L7.5 3M11.5 7L7.5 11"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
+              <path d="M2.5 7H11.5M11.5 7L7.5 3M11.5 7L7.5 11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </a>
         </div>
 
         {/* Mobile hamburger */}
         <button
-          className={`md:hidden p-2 transition-colors ${
-            scrolled ? "text-slate-700" : "text-white"
-          }`}
+          className="md:hidden p-2 text-warm-700"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Menu"
         >
@@ -117,13 +92,13 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="md:hidden bg-white border-t border-slate-100 px-6 py-4 flex flex-col gap-4 shadow-lg">
+        <div className="md:hidden bg-cream border-t border-warm-200/60 px-6 py-4 flex flex-col gap-4 shadow-lg">
           {links.map((l) => (
             <a
               key={l.href}
               href={l.href}
               onClick={() => setMenuOpen(false)}
-              className="text-slate-700 font-medium hover:text-indigo-600 transition-colors"
+              className="text-warm-700 font-medium hover:text-terra-500 transition-colors"
             >
               {l.label}
             </a>
@@ -131,7 +106,7 @@ export default function Navbar() {
           <a
             href="#contact"
             onClick={() => setMenuOpen(false)}
-            className="inline-flex items-center justify-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-colors mt-2"
+            className="inline-flex items-center justify-center gap-2 bg-terra-500 hover:bg-terra-600 text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-colors mt-2"
           >
             Démarrer mon projet
           </a>

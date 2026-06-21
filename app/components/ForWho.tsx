@@ -9,10 +9,6 @@ const audiences = [
       "Intégration agenda & prise de RDV",
       "Crédibilisez votre expertise",
     ],
-    color: "from-indigo-50 to-indigo-100/50",
-    border: "border-indigo-100",
-    accent: "text-indigo-600",
-    dot: "bg-indigo-500",
   },
   {
     emoji: "🎬",
@@ -24,10 +20,6 @@ const audiences = [
       "Page liens (bio link) sur mesure",
       "Développez votre communauté",
     ],
-    color: "from-violet-50 to-violet-100/50",
-    border: "border-violet-100",
-    accent: "text-violet-600",
-    dot: "bg-violet-500",
   },
   {
     emoji: "💡",
@@ -39,26 +31,24 @@ const audiences = [
       "Témoignages & preuves sociales",
       "Référencement local & national",
     ],
-    color: "from-amber-50 to-amber-100/50",
-    border: "border-amber-100",
-    accent: "text-amber-600",
-    dot: "bg-amber-500",
   },
 ];
 
 export default function ForWho() {
   return (
-    <section className="bg-slate-50 py-24 px-6">
+    <section className="bg-cream py-24 px-6">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <p className="text-indigo-600 font-semibold text-sm uppercase tracking-widest mb-3">
-            Pour qui ?
-          </p>
-          <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <div className="h-px w-10 bg-terra-400" />
+            <span className="text-terra-500 text-xs font-semibold tracking-[0.15em] uppercase">Pour qui ?</span>
+            <div className="h-px w-10 bg-terra-400" />
+          </div>
+          <h2 className="font-serif text-4xl sm:text-5xl text-warm-950 mb-5">
             Ce site est fait pour vous si…
           </h2>
-          <p className="text-slate-500 text-lg max-w-2xl mx-auto">
-            Vous avez une expertise précieuse, mais votre présence en ligne ne le reflète pas encore. C'est exactement là qu'on intervient.
+          <p className="text-warm-600 text-lg max-w-2xl mx-auto leading-relaxed">
+            Vous avez une expertise précieuse, mais votre présence en ligne ne le reflète pas encore. C&apos;est exactement là qu&apos;on intervient.
           </p>
         </div>
 
@@ -66,15 +56,15 @@ export default function ForWho() {
           {audiences.map((a) => (
             <div
               key={a.title}
-              className={`card-hover bg-gradient-to-br ${a.color} rounded-2xl p-7 border ${a.border}`}
+              className="card-hover bg-warm-50 rounded-2xl p-8 border border-warm-200/60"
             >
-              <div className="text-4xl mb-4">{a.emoji}</div>
-              <h3 className="text-xl font-bold text-slate-900 mb-1">{a.title}</h3>
-              <p className="text-slate-500 text-sm mb-5">{a.desc}</p>
-              <ul className="space-y-2.5">
+              <div className="text-4xl mb-5">{a.emoji}</div>
+              <h3 className="font-serif text-2xl text-warm-950 mb-1">{a.title}</h3>
+              <p className="text-warm-400 text-sm mb-6">{a.desc}</p>
+              <ul className="space-y-3">
                 {a.points.map((pt) => (
-                  <li key={pt} className="flex items-start gap-2.5 text-sm text-slate-700">
-                    <span className={`w-1.5 h-1.5 rounded-full ${a.dot} mt-1.5 shrink-0`} />
+                  <li key={pt} className="flex items-start gap-3 text-sm text-warm-700">
+                    <span className="w-1.5 h-1.5 rounded-full bg-terra-500 mt-1.5 shrink-0" />
                     {pt}
                   </li>
                 ))}
