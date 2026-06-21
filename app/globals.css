@@ -1,26 +1,83 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #faf5ee;
+  --foreground: #1c1008;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --font-serif: var(--font-playfair);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* Crème & Terracotta palette */
+  --color-cream:       #faf5ee;
+  --color-cream-dark:  #f0e8db;
+  --color-terra-50:    #fdf2ed;
+  --color-terra-100:   #f5e3d7;
+  --color-terra-400:   #d4814e;
+  --color-terra-500:   #c4674a;
+  --color-terra-600:   #a84f35;
+  --color-terra-700:   #8b3a22;
+  --color-warm-50:     #fefcf8;
+  --color-warm-100:    #f3ebe1;
+  --color-warm-200:    #e0cbbf;
+  --color-warm-400:    #a07a64;
+  --color-warm-600:    #6b4532;
+  --color-warm-900:    #2d1810;
+  --color-warm-950:    #1c1008;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
 }
+
+/* Scrolling marquee */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 35s linear infinite;
+}
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Float for hero mockup */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-8px); }
+}
+.animate-float {
+  animation: float 5s ease-in-out infinite;
+}
+
+/* Fade-up intro */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-up         { animation: fadeUp 0.6s ease-out both; }
+.animate-delay-100       { animation-delay: 0.1s; }
+.animate-delay-200       { animation-delay: 0.2s; }
+.animate-delay-300       { animation-delay: 0.3s; }
+
+/* Card hover lift */
+.card-hover {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -12px rgba(196, 103, 74, 0.18);
+}
+
+/* FAQ accordion icon rotation */
+details[open] .faq-icon { transform: rotate(45deg); }
+.faq-icon               { transition: transform 0.2s ease; }
+
+details > summary               { list-style: none; cursor: pointer; }
+details > summary::-webkit-details-marker { display: none; }
